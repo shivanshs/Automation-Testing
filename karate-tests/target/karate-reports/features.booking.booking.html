@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"7f16436c-342a-46d6-8b4a-a6f70955b1b6",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.booking.booking</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2026-05-26 12:41:36 AM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:47]"><span>[1:47]</span> <span>Booking is successful</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/booking/booking.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">POST /booking – Create a New Booking</span>
+          <span class="feature-description">&quot;&quot;&quot;
+  Validates that the POST /booking endpoint successfully creates a booking.
+  A valid roomid is resolved dynamically from GET /room before any scenario
+  runs.
+
+  Payload requirements: roomid, firstname, lastname, depositpaid (boolean),
+  bookingdates { checkin, checkout }.
+  &quot;&quot;&quot;</span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:47]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">booking</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:47]</span>
+                <span class="scenario-name">Booking is successful</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1139</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:47]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:47]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># ── Resolve a valid roomid once for the entire feature ─────────────────</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def roomId =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">766</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.16">(function(){
+  var res = karate.http(karate.get(&#39;baseUrl&#39;)).path(&#39;/room&#39;).get();
+  var rooms = res.body.rooms;
+  if (!rooms || rooms.length === 0) karate.fail(&#39;No rooms returned by GET /room&#39;);
+  return rooms[0].roomid;
+})()</div>
+
+  
+
+  <div class="preformatted" data-parent="0.16">00:41:35.895 request:
+1 &gt; GET https://automationintesting.online/api/room
+1 &gt; Host: automationintesting.online
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:41:36.437 response time in milliseconds: 516
+1 &lt; 200
+1 &lt; Date: Mon, 25 May 2026 23:41:36 GMT
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+1 &lt; x-railway-edge: railway/europe-west4-drams3a
+1 &lt; x-railway-request-id: SwnVdFpqSp6r7Gf5rJsmnA
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=rtBKmsEdJzvEc7kpQdPjFbu2H04RoTeU9MioitTTYNXTc0L1Yl0ce0Q2hox8VO%2Fti0u0i%2BsryZKoZL3w5wr00nXAvdprfoXR%2FKmetXCeGaxEid7Qj%2FhoZh2YOLiROr41c6WMYqvsxq76APyfvg%3D%3D&quot;}]}
+1 &lt; CF-RAY: a018644d2e3af662-LHR
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{
+  &quot;rooms&quot;: [
+    {
+      &quot;accessible&quot;: true,
+      &quot;description&quot;: &quot;Aenean porttitor mauris sit amet lacinia molestie. In posuere accumsan aliquet. Maecenas sit amet nisl massa. Interdum et malesuada fames ac ante.&quot;,
+      &quot;features&quot;: [
+        &quot;TV&quot;,
+        &quot;WiFi&quot;,
+        &quot;Safe&quot;
+      ],
+      &quot;image&quot;: &quot;/images/room1.jpg&quot;,
+      &quot;roomName&quot;: &quot;101&quot;,
+      &quot;roomPrice&quot;: 100,
+      &quot;roomid&quot;: 1,
+      &quot;type&quot;: &quot;Single&quot;
+    },
+    {
+      &quot;accessible&quot;: true,
+      &quot;description&quot;: &quot;Vestibulum sollicitudin, lectus ac mollis consequat, lorem orci ultrices tellus, eleifend euismod tortor dui egestas erat. Phasellus et ipsum nisl. &quot;,
+      &quot;features&quot;: [
+        &quot;TV&quot;,
+        &quot;Radio&quot;,
+        &quot;Safe&quot;
+      ],
+      &quot;image&quot;: &quot;/images/room2.jpg&quot;,
+      &quot;roomName&quot;: &quot;102&quot;,
+      &quot;roomPrice&quot;: 150,
+      &quot;roomid&quot;: 2,
+      &quot;type&quot;: &quot;Double&quot;
+    },
+    {
+      &quot;accessible&quot;: true,
+      &quot;description&quot;: &quot;Etiam metus metus, fringilla ac sagittis id, consequat vel neque. Nunc commodo quis nisl nec posuere. Etiam at accumsan ex. &quot;,
+      &quot;features&quot;: [
+        &quot;Radio&quot;,
+        &quot;WiFi&quot;,
+        &quot;Safe&quot;
+      ],
+      &quot;image&quot;: &quot;/images/room3.jpg&quot;,
+      &quot;roomName&quot;: &quot;103&quot;,
+      &quot;roomPrice&quot;: 225,
+      &quot;roomid&quot;: 3,
+      &quot;type&quot;: &quot;Suite&quot;
+    },
+    {
+      &quot;accessible&quot;: false,
+      &quot;description&quot;: &quot;Please enter a description for this room&quot;,
+      &quot;features&quot;: [
+      ],
+      &quot;image&quot;: &quot;https://www.mwtestconsultancy.co.uk/img/room1.jpg&quot;,
+      &quot;roomName&quot;: &quot;101&quot;,
+      &quot;roomPrice&quot;: 100,
+      &quot;roomid&quot;: 4,
+      &quot;type&quot;: &quot;Single&quot;
+    },
+    {
+      &quot;accessible&quot;: false,
+      &quot;description&quot;: &quot;Please enter a description for this room&quot;,
+      &quot;features&quot;: [
+      ],
+      &quot;image&quot;: &quot;https://www.mwtestconsultancy.co.uk/img/room1.jpg&quot;,
+      &quot;roomName&quot;: &quot;103&quot;,
+      &quot;roomPrice&quot;: 100,
+      &quot;roomid&quot;: 5,
+      &quot;type&quot;: &quot;Single&quot;
+    }
+  ]
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:47]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># ── Generate future dates so bookings never clash with today ───────────</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref bg-step">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def checkin  = java.time.LocalDate.now().plusDays(21).toString()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">10</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:47]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref bg-step">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def checkout = java.time.LocalDate.now().plusDays(24).toString()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:47]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># ── Reusable valid payload ─────────────────────────────────────────────</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref bg-step">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def bookingPayload =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">14</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.31">{
+  &quot;roomid&quot;:      #(roomId),
+  &quot;firstname&quot;:   &quot;James&quot;,
+  &quot;lastname&quot;:    &quot;Dean&quot;,
+  &quot;depositpaid&quot;: true,
+  &quot;bookingdates&quot;: {
+    &quot;checkin&quot;:  &quot;#(checkin)&quot;,
+    &quot;checkout&quot;: &quot;#(checkout)&quot;
+  },
+  &quot;email&quot;: &quot;james.dean@example.com&quot;,
+  &quot;phone&quot;: &quot;01234567890&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/booking/&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request bookingPayload</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">327</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.51">00:41:36.513 request:
+1 &gt; POST https://automationintesting.online/api/booking
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 188
+1 &gt; Host: automationintesting.online
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.10)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;roomid&quot;:1,&quot;firstname&quot;:&quot;James&quot;,&quot;lastname&quot;:&quot;Dean&quot;,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-06-16&quot;,&quot;checkout&quot;:&quot;2026-06-19&quot;},&quot;email&quot;:&quot;james.dean@example.com&quot;,&quot;phone&quot;:&quot;01234567890&quot;}
+
+00:41:36.795 response time in milliseconds: 282
+1 &lt; 201
+1 &lt; Date: Mon, 25 May 2026 23:41:36 GMT
+1 &lt; Content-Type: application/json
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+1 &lt; x-railway-edge: railway/europe-west4-drams3a
+1 &lt; x-railway-request-id: hBh_2cKGSuy2vuk9YqdHTg
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=HDuhGr8tZuteNROUa5Q0MgMgNFEjjmLEaD%2BYrxjI30ohDNid5Ek7rLi296wPo6S2hrSCMSX5D%2BArBkyAs8wyGvxONXoAU%2F0d8xokB46tZSyjbGDZgK6yO9m48pzELGMjzA3v3DaagB8HLQEd7Q%3D%3D&quot;}]}
+1 &lt; CF-RAY: a018644eda21fc2b-LHR
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{
+  &quot;bookingdates&quot;: {
+    &quot;checkin&quot;: &quot;2026-06-16&quot;,
+    &quot;checkout&quot;: &quot;2026-06-19&quot;
+  },
+  &quot;bookingid&quot;: 7,
+  &quot;depositpaid&quot;: true,
+  &quot;firstname&quot;: &quot;James&quot;,
+  &quot;lastname&quot;: &quot;Dean&quot;,
+  &quot;roomid&quot;: 1
+}
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref passed">53</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.bookingid == &#39;#number&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">9</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.54">
+      <div class="step-ref passed">54</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>assert response.bookingid &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
